@@ -25,22 +25,6 @@ public class AccountDaoImpl implements AccountDao {
 		SessionFactory sf = new Configuration().configure().buildSessionFactory();
 		Session ses = sf.openSession();
 
-		// getting account id
-
-//		Query q  = ses.createQuery("select nextval('acseq')");
-//		List li = q.getResultList();
-//		System.out.println(li);
-//		System.out.println("#############");
-//		long accountno = (long)li.get(0);
-//		System.out.println(accountno);
-
-		// getting customer id
-
-//		Query q1  = ses.createQuery("select nextval('cuseq')");
-//		List li1 = q1.getResultList();
-//		long customerId = (long)li1.get(0);
-//		System.out.println(customerId);
-
 		Transaction tx = ses.beginTransaction();
 		Account account = new Account(type, name, 0.0, bname);
 		Customer customer = new Customer(username, password, address, phoneno, email, account);
